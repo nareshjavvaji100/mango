@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('checkout') {
       steps {
@@ -12,5 +12,8 @@ pipeline {
         sh 'mvn clean -Dmaven.test.failure.ignore= true install'
       }
     }
+  }
+  environment {
+    dev = 'test'
   }
 }
