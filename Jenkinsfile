@@ -9,7 +9,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'build'
-        sh 'mvn clean package'
+        sh 'mvn clean -Dmaven.test.failure.ignore= true install'
       }
     }
   }
